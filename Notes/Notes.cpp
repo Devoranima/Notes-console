@@ -83,17 +83,6 @@ int new_note() {
 #endif
 
 
-//Crutch class
-#if 0
-class justOneMethod {
-public:
-	void error() {
-		std::cout << "\n!!! Wrong command, dumbass, try again !!!\n\n";
-	}
-};
-#endif
-
-
 
 
 int main(int argc, char** argv) {
@@ -104,6 +93,11 @@ int main(int argc, char** argv) {
 	sqlite3_open("notesDB.dblite", &db);
 	std::string sql = "DROP TABLE 'NOTES';";
 	sqlite3_exec(db, sql.c_str(), 0, 0, 0);
+#endif
+
+
+#ifdef _DEBUG
+	std::cout << " I am debug\n";
 #endif
 
 	app();

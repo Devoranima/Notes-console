@@ -8,11 +8,13 @@
 #include <string>
 #include <limits>
 #include "DBlite.h"
+#include "errorHandler.h"
 
 class app
 {
 private:
 	DBlite db;
+	errorHandler error;
 public:
 	app() {
 		std::cout << "@- Starting app...\n\n";
@@ -80,7 +82,7 @@ $R@i.~~ !     :   ~$$$$$B$$en:``
 			//std::string ss;
 			//std::getline(std::cin, ss);
 
-			std::cout << "\n!!! Wrong command, dumbass, try again !!!\n\n";
+			error.error();
 			return 1;
 		}
 		}
@@ -121,7 +123,7 @@ $R@i.~~ !     :   ~$$$$$B$$en:``
 		}
 		default: {
 
-			std::cout << "\n!!! Wrong command, dumbass, try again !!!\n\n";
+			error.error();
 			return 1;
 		}
 		}
@@ -163,7 +165,7 @@ $R@i.~~ !     :   ~$$$$$B$$en:``
 			//std::string ss;
 			//std::getline(std::cin, ss);
 
-			std::cout << "\n!!! Wrong command, dumbass, try again !!!\n\n";
+			error.error();
 			return 1;
 		}
 		}
@@ -220,7 +222,7 @@ $R@i.~~ !     :   ~$$$$$B$$en:``
 			//std::string ss;
 			//std::getline(std::cin, ss);
 
-			std::cout << "\n!!! Wrong command, dumbass, try again !!!\n\n";
+			error.error();
 			return 1;
 		}
 		}
